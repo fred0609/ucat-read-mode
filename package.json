@@ -1,0 +1,16 @@
+{
+  "name": "ucat-read-mode",
+  "version": "0.1.0",
+  "private": true,
+  "description": "UCAT Verbal Reasoning–style practice from the current webpage",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "test:chunk": "node scripts/test-chunk.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.268",
+    "esbuild": "^0.25.0",
+    "typescript": "^5.7.0"
+  }
+}

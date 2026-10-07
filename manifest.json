@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "UCAT Read Mode",
+  "version": "0.1.1",
+  "description": "Turn the current page into a free UCAT Verbal Reasoning–style cloze practice set.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://*.wikipedia.org/*"],
+  "action": {
+    "default_title": "UCAT Read Mode — start practice"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.wikipedia.org/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["overlay.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
