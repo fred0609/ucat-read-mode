@@ -6,6 +6,30 @@ Nothing is uploaded — everything runs on your computer.
 
 ---
 
+## Install with Claude Code (or similar AI agents)
+
+**Paste this prompt into Claude Code** (or Cursor Agent):
+
+```text
+Clone https://github.com/fred0609/ucat-read-mode, run npm install && npm run build, then tell me the absolute path to dist/ and the exact steps to load it in Chrome.
+```
+
+What the agent should complete:
+
+1. Clone the repo  
+2. `npm install`  
+3. `npm run build`  
+4. Confirm `dist/` has `manifest.json`, `background.js`, `content.js`, `overlay.css`  
+5. Give you the full path to `dist/` and the Load unpacked steps below  
+
+What you still do yourself:
+
+1. Open `chrome://extensions` (or `edge://extensions`)  
+2. Turn on **Developer mode**  
+3. **Load unpacked** → select the `dist/` folder the agent gave you  
+
+---
+
 ## What you need first
 
 1. **Google Chrome**, **Microsoft Edge**, or **Brave** (desktop)
@@ -50,32 +74,6 @@ That creates a `dist` folder. You’ll load **that** folder into your browser (n
 ### Load it in Edge
 
 Same steps, but go to `edge://extensions` instead.
-
----
-
-## Install with Claude Code (or similar AI agents)
-
-An AI coding agent can usually do the **clone + build** in one shot. It **cannot** finish loading the extension into Chrome for you — that last step still needs a human click.
-
-**Paste this prompt into Claude Code** (or Cursor Agent):
-
-```text
-Clone https://github.com/fred0609/ucat-read-mode, run npm install && npm run build, then tell me the absolute path to dist/ and the exact steps to load it in Chrome.
-```
-
-What the agent should complete:
-
-1. Clone the repo  
-2. `npm install`  
-3. `npm run build`  
-4. Confirm `dist/` has `manifest.json`, `background.js`, `content.js`, `overlay.css`  
-5. Give you the full path to `dist/` and the Load unpacked steps above  
-
-What you still do yourself:
-
-1. Open `chrome://extensions` (or `edge://extensions`)  
-2. Turn on **Developer mode**  
-3. **Load unpacked** → select the `dist/` folder the agent gave you  
 
 ---
 
